@@ -1,705 +1,138 @@
+
 <!DOCTYPE html>
-<html>
-
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Top Up</title>
-  <link rel="stylesheet" href="topup.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-</head>
-
-<body>
-  <style>
-    /* style.css */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Sriracha&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Roboto+Slab:wght@100..900&family=Sriracha&family=Teko&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kabisat</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+        body {
+    font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 200px;
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+            position: fixed;
 }
 
-body {
-  font-family: 'tahoma', sans-serif;
-  background-color: whitesmoke;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  margin: 0;
-}
+        #background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
 
-/* Header CSS */
-header {
-  position: relative;
-  text-align: center;
-  background-color: #001440;
-  color: #ffff;
-  padding: 20px;
-}
-
-.logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.logo {
-  width: 100px;
-  border-radius: 50%;
-}
-
-.sambutan {
-  margin-top: 0px;
-  font-size: 20px;
-}
-
-.title {
-  text-decoration: none;
-  color: white;
-  font-family: "Sriracha", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 30px;
-  margin-top: 10px;
-}
-
-.input-search {
-  width: 60%;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  margin-top: 10px;
-}
-
-.input-submit {
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  background-color: #4682B4;
-  color: #fff;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.search-results {
-  position: absolute;
-  top: 220px;
-  left: 55px;
-  width: 220px;
-  background-color: white;
-  border: 2.2px solid black;
-  border-radius: 10px;
-  display: none;
-  z-index: 1000;
-}
-
-.search-results.show {
-  display: block;
-}
-
-.search-product-info {
-  padding: 10px;
-  border-bottom: 1.5px solid #ccc;
-  display: flex;
-  align-items: center;
-  width: 215px;
-}
-
-.search-product-info:last-child {
-    border-bottom: none;
-}
-
-.search-product-image {
-  width: 30px;
-  height: auto;
-  margin-right: 10px;
-  border-radius: 5px;
-}
-
-.search-product-text {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-/* Product Section CSS */
-.container-games {
-  display: relative;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: -10px; 
-  border-radius: 20px;
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3), 
-              inset 1px 1px 5px rgba(255, 255, 255, 0.5), 
-              inset -1px -1px 5px rgba(0, 0, 0, 0.1); 
-  padding: 10px; 
-}
-
-.container-games2 {
-  display: relative;
-  margin-left: 10px;
-  margin-right: 10px;
-  border: 2px solid #ccc; 
-  margin-top: 30px; 
-  border-radius: 20px;
-  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3), 
-              inset 1px 1px 5px rgba(255, 255, 255, 0.5), 
-              inset -1px -1px 5px rgba(0, 0, 0, 0.1); 
-  padding: 10px;
-}
-
-
-
-.judul-games {
-  font-size: 11px; 
-  font-style: underline;
-  position: absolute; 
-  top: 10px; 
-  left: 5px; 
-  color: #4682B4;
-  font-family: "Teko", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-.judul-games2 {
-  font-size: 11px; 
-  font-style: underline;
-  position: absolute; 
-  top: ;
-  left: 10px; 
-  color: #4682B4;
-  font-family: "Teko", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-.product-text {
-  font-size: 12px; 
-  font-weight: bold;
-}
-
-.product-section {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-  margin-top: 30px; 
-}
-
-
-.product-info {
-  text-align: center;
-}
-
-.product-image {
-  max-width: 100%; 
-  height: auto;
-  border-radius: 15px; 
-  
-}
-
-/*  
-.container-games2 {
-  margin-top: 30px; 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; 
-}
-*/
-/* games2 */
-
-.product-section2 {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 30px;
-}
-
-.product-info2 {
-  text-align: center;
-  width: 22%; 
-  margin-bottom: 20px;
-}
-.product-info2:nth-child(n+5) {
-  margin-top: -10px;
-}
-.product-image2 {
-  max-width: 100%; 
-  height: auto; 
-  border-radius:15px;
-}
-
-.product-text2 {
-  font-size: 12px; 
-  font-weight: bold; 
-}
-
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  list-style-type: none;
-}
-
-nav ul li {
-  margin: 0 10px;
-}
-
-nav ul li a {
-  position: relative;
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  padding: 10px 5px;
-}
-
-nav ul li a::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 1.5px;
-  background-color: #fff;
-  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
-}
-
-nav ul li a:hover::before {
-  width: 100%;
-  left: 0;
-}
-
-/* Swiper Styles */
-.swiper-container {
-  margin-top: 30px;
-  margin-bottom: -20px;
-}
-
-.swiper-container {
-  margin-top: 20px; 
-  margin-bottom: 10px;
-}
-
-
-
-.container-games, .container-games2 {
-  position: relative;
-  min-height: 100px; 
-}
-
-.not-found-container {
-  display: flex;
-  align-items: center;
-}
-
-.not-found-image {
-  width: 30px;
-  height: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-right: 10px;
-  border-radius: 5px;
-  order: -1;
-  margin-left: 10px;
-  }
-
-.not-found-message {
-  font-weight: bold; /* Membuat teks menjadi tebal */
-}
-
-/* bantuan */
-
-.customer-service {
-    background-color: #001440;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 30px;
-    margin-bottom: 0px;
-    margin-left: -10px;
-    margin-right: -10px;
-}
-
-.customer-service h2 {
-    color: #fff;  
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.customer-service p {
-    color: #ddd; 
-    font-size: 16px;
-    margin-bottom: 15px;
-}
-
-.customer-service ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.customer-service li {
-    color: #ddd;  
-    font-size: 16px;
-    margin-bottom: 5px;
-}
-
-.customer-service li:before {
-    content: "\2022";  
-    color: #ccc; 
-    margin-right: 5px;
-}
-
-.customer-service li:last-child {
-    margin-bottom: 0;
-}
-
-/* bantuan end */
-
-/* Handphone 1  
-@media(max-width: 320px) {
-    .judul-games2 {
-        top: 46.5%; 
-    }
-    
-}
-
-
-/* Handphone 2  
-@media(max-width: 375px) {
-    .judul-games2 {
-        top: 655px;
-}
-
-/* Handphone 2 END */
-
-  </style>
-  <!-- header -->
-  <header>
-    <div class="logo-container">
-      <img src="https://i.imgur.com/gAsizBX.jpeg" alt="Logo RAS STORE" class="logo">
-      <a class="title">RAS STORE</a>
-    </div>
-    <input type="search" name="" id="" class="input-search" placeholder="Cari Produk..." oninput="searchProducts()">
-    <button type="submit" class="input-submit">Cari</button>
-    <nav>
-      <ul>
-        <li><a href="#games">GAMES</a></li>
-        <li><a href="#PPOB">PPOB</a></li>
-        <li><a href="#BANTUAN">BANTUAN</a></li>
-      </ul>
-    </nav>
-  </header>
-  <!-- header -->
-
-  <!-- slider -->
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="https://i.imgur.com/LfVlOGW.jpeg" alt="Slide 1"style="width:80%; height:150px; margin-left: 40px;   border-style:solid; border-width:4px; border-color: white; border-radius:10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);"></div>
-      
-      <div class="swiper-slide"><img src="https://i.imgur.com/PUV1ENP.jpeg" alt="Slide 2" style="width:80%; height:150px;margin-left: 40px; border-style:solid; border-width:4px; border-color: white; border-radius:10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);"></div>
-      
-      <div class="swiper-slide"><img src="https://i.imgur.com/arVEMeu.jpeg" alt="Slide 3" style="width:80%; height:150px; margin-left: 40px;  border-style:solid; border-width:4px; border-color: white; border-radius:10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);"></div>
-      <!-- Tambahkan gambar atau konten lainnya di sini -->
-  <!-- slider -->
-    </div>
-    </div>
-  <!-- Games Populer -->
-  <br>
-  <div class="container-games" id="games">
-    <div class="judul-games">
-      <h1>🔥GAMES POPULER🔥</h1>
-    </div>
-    <div class="product-section" >
-      <div class="product-info">
-        <img src="https://i.imgur.com/hbRd2mA.jpeg" alt="Mobile Legends" class="product-image" onclick="navigateToProduct('#')">
-        <p class="product-text">Mobile Legends</p>
-      </div>
-      <div class="product-info">
-        <img src="https://imgbb.host/images/Picsart_24-05-08_17-24-17-605.jpeg" alt="Free Fire" class="product-image" onclick="navigateToProduct('https://freefire.com/')">
-        <p class="product-text">Free Fire</p>
-      </div>
-      <div class="product-info">
-        <img src="https://i.imgur.com/JL3eQak.jpeg" alt="PUBG Mobile" class="product-image" onclick="navigateToProduct('https://pubgmobile.com/')">
-        <p class="product-text">PUBG Mobile</p>
-      </div>
-      <div class="product-info">
-        <img src="https://imgbb.host/images/Picsart_24-05-08_17-33-43-780.jpeg" alt="Genshin Impact" class="product-image" onclick="navigateToProduct('https://genshinimpact.com/')">
-        <p class="product-text">Genshin Impact</p>
-      </div>
-    </div>
-    </div>
-  <!-- Sampai Sini -->
-  <br>
-  <!-- Games Lainnya -->
-  <!-- Games Lainnya -->
-<div class="container-games2">
-  <div class="judul-games2">
-    <h1>GAMES LAINNYA</h1>
-  </div>
-  <div class="product-section2" id="#">
-    <!-- Produk 1 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_17-40-16-578.jpeg" alt="Zepeto" class="product-image2" onclick="navigateToProduct('https://zepeto.com/')">
-      <p class="product-text2">Zepeto</p>
-    </div>
-    <!-- Produk 2 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_17-39-09-762.jpeg" alt="Higgs Domino" class="product-image2" onclick="navigateToProduct('https://freefire.com/')">
-      <p class="product-text2">Higgs Domino</p>
-    </div>
-    <!-- Produk 3 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_17-30-03-467.jpeg" alt="Arena Of Valor" class="product-image2" onclick="navigateToProduct('https://pubgmobile.com/')">
-      <p class="product-text2">Arena Of Valor</p>
-    </div>
-    <!-- Produk 4 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_17-37-33-857.jpeg" alt="Hago" class="product-image2" onclick="navigateToProduct('https://genshinimpact.com/')">
-      <p class="product-text2">Hago</p>
-    </div>
-    <!-- Produk 5 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_17-36-15-938.jpeg" alt="Dragon Raja Sea" class="product-image2" onclick="navigateToProduct('https://genshinimpact.com/')">
-      <p class="product-text2">Dragon Raja Sea</p>
-    </div>
-    <!-- Produk 6 -->
-    <div class="product-info2">
-      <img src="https://i.imgur.com/Rno3X00.jpeg" alt="Point Blank" class="product-image2" onclick="navigateToProduct('https://genshinimpact.com/')">
-      <p class="product-text2">Point Blank</p>
-    </div>
-    <!-- Produk 7 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_17-28-34-590.jpeg" alt="Call Of Duty Mobile" class="product-image2" onclick="navigateToProduct('https://genshinimpact.com/')">
-      <p class="product-text2">Call Of Duty</p>
-    </div>
-    <!-- Produk 8 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_17-32-01-101.jpeg" alt="Supersus" class="product-image2" onclick="navigateToProduct('https://genshinimpact.com/')">
-      <p class="product-text2">Supersus</p>
-    </div>
-    <!-- Produk 9 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_17-27-31-945.jpeg" alt="Sausage Man" class="product-image2" onclick="navigateToProduct('https://genshinimpact.com/')">
-      <p class="product-text2">Sausage Man</p>
-    </div>
-  </div>
-</div>
-<!-- Sampai Sini -->
-
-<!-- banner ppob -->
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="https://i.imgur.com/LfVlOGW.jpeg" alt="Slide 1"style="width:80%; height:150px; margin-left: 40px;   border-style:solid; border-width:4px; border-color: white; border-radius:10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);"></div>
-      
-      <div class="swiper-slide"><img src="https://i.imgur.com/PUV1ENP.jpeg" alt="Slide 2" style="width:80%; height:150px;margin-left: 40px; border-style:solid; border-width:4px; border-color: white; border-radius:10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);"></div>
-      
-      <div class="swiper-slide"><img src="https://i.imgur.com/arVEMeu.jpeg" alt="Slide 3" style="width:80%; height:150px; margin-left: 40px;  border-style:solid; border-width:4px; border-color: white; border-radius:10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);"></div>
+        h1 {
+            color: white;
+            font-family: "Kanit", sans-serif;
+            font-weight: 800;
+            font-style: normal;          
+            border: none;
             
-    </div>
-    </div>
+        }
 
-<!-- PPOB -->
-<div class="container-games2" id="PPOB">
-  <div class="judul-games2">
-    <h1>PPOB LENGKAP</h1>
-  </div>
-  <div class="product-section2" >
-    <!-- Produk 1 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_15-15-05-123.jpeg" alt="Zepeto" class="product-image2" onclick="navigateToProduct('https://zepeto.com/')">
-      <p class="product-text2">Pulsa</p>
-    </div>
-    <!-- Produk 2 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_15-18-18-983.jpeg" alt="Higgs Domino" class="product-image2" onclick="navigateToProduct('https://freefire.com/')">
-      <p class="product-text2">Paket Data</p>
-    </div>
-    <!-- Produk 3 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_15-20-09-167.jpeg" alt="Arena Of Valor" class="product-image2" onclick="navigateToProduct('https://pubgmobile.com/')">
-      <p class="product-text2">Telepon & Sms</p>
-    </div>
-    <!-- Produk 4 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_16-53-56-873.jpeg" alt="Hago" class="product-image2" onclick="navigateToProduct('https://genshinimpact.com/')">
-      <p class="product-text2">Inject Vouchers</p>
-    </div>
-    <!-- Produk 5 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_15-23-11-337.jpeg" alt="Dragon Raja Sea" class="product-image2" onclick="navigateToProduct('https://genshinimpact.com/')">
-      <p class="product-text2">Masa Aktif</p>
-    </div>
-    <!-- Produk 6 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_16-30-23-299.jpeg" alt="Point Blank" class="product-image2" onclick="navigateToProduct('https://genshinimpact.com/')">
-      <p class="product-text2">Vouchers</p>
-    </div>
-    <!-- Produk 7 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_15-45-51-241.jpeg" alt="Call Of Duty Mobile" class="product-image2" onclick="navigateToProduct('https://genshinimpact.com/')">
-      <p class="product-text2">Token PLN</p>
-    </div>
-    <!-- Produk 8 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_16-05-33-349.jpeg" alt="Supersus" class="product-image2" onclick="navigateToProduct('https://genshinimpact.com/')">
-      <p class="product-text2">Streaming</p>
-    </div>
-    <!-- Produk 9 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_16-19-17-446.jpeg" alt="Sausage Man" class="product-image2" onclick="navigateToProduct('https://genshinimpact.com/')">
-      <p class="product-text2">Wifi ID</p>
-    </div>
-       <!-- Produk 9 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_16-28-00-584.jpeg" alt="Sausage Man" class="product-image2" onclick="navigateToProduct('https://genshinimpact.com/')">
-      <p class="product-text2">E-Wallet</p>
-    </div>
-       <!-- Produk 9 -->
-    <div class="product-info2">
-      <img src="https://imgbb.host/images/Picsart_24-05-08_16-33-08-819.jpeg" alt="Sausage Man" class="product-image2" onclick="navigateToProduct('https://genshinimpact.com/')">
-      <p class="product-text2">Tagihan</p>
-      </div>
-      <div class="product-info2">
-  </div>
-</div>
-</div>
-  
- 
+        input, button {
+            padding: 10px;
+            margin: -5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            background-color: rgba(128, 128, 128, 0.5);
+            color: white;
+            font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+        }
 
-  <!-- Tampilan Input Produk -->
-  <div class="search-results">
-    <!-- Hasil pencarian produk akan ditampilkan di sini -->
-    </div>
-<!-- paling bawah -->
-<div class="customer-service" id="BANTUAN">
-    <h2>Layanan Pelanggan</h2>
-    <p>Hubungi kami jika Anda memiliki pertanyaan atau masalah:</p>
-    <ul>
-        <li>Telepon: +628977301988</li>
-        <li>Email: ferioktavianm226@gmail.com</li>
-        <li>Telegram: @RasStoredmid</li>
-    </ul>
-</div>
+        #yearInput {
+            width: 50%;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            background-color: rgba(128, 128, 128, 0.5);
+        }
 
-<!-- sampai sini -->
-  <!-- JavaScript -->
-  <script>
-    // Daftar produk Anda dengan tautan yang sesuai
-    const products = [
-    
-    <!-- Mobile Legends -->
-      { name: 'Mobile Legends', image: 'https://i.imgur.com/hbRd2mA.jpeg', link: '#' },
-      
-      <!-- Free Fire -->
-      { name: 'Free Fire', image: 'https://imgbb.host/images/Picsart_24-05-08_17-24-17-605.jpeg', link: '#' },
-      
-      <!-- PUBG Mobile -->
-      { name: 'PUBG Mobile', image: 'https://i.imgur.com/JL3eQak.jpeg', link: '#' },
-      
-      <!-- Genshin Impact -->
-      { name: 'Genshin Impact', image: 'https://imgbb.host/images/Picsart_24-05-08_17-33-43-780.jpeg', link: '#' }, 
-      
-      <!-- Zepeto -->
-    { name: 'Zepeto', image: 'https://imgbb.host/images/Picsart_24-05-08_17-40-16-578.jpeg', link: '#' }, 
-    
-    <!-- Higgs Domino -->
-    { name: 'Higgs Domino', image: 'https://imgbb.host/images/Picsart_24-05-08_17-39-09-762.jpeg', link: '#' }, 
-    
-    <!-- Arena Of Valor -->
-    { name: 'Arena Of Valor', image: 'https://imgbb.host/images/Picsart_24-05-08_17-30-03-467.jpeg', link: '#' }, 
-    
-    <!-- Hago -->
-    { name: 'Hago', image: 'https://imgbb.host/images/Picsart_24-05-08_17-37-33-857.jpeg', link: '#' }, 
-    
-    <!-- Dragon Raja Sea -->
-    { name: 'Dragon Raja Sea', image: 'https://imgbb.host/images/Picsart_24-05-08_17-36-15-938.jpeg', link: '#' }, 
-    
-    <!-- Point Blank -->
-    { name: 'Point Blank', image: 'https://i.imgur.com/Rno3X00.jpeg', link: '#' }, 
+        #yearInput:focus {
+            box-shadow: 0 0 10px #e0e0e0;
+            outline: none;
+        }
+        button:hover {
+            box-shadow: 0 0 10px #e0e0e0;
+            outline: none;
+        }
+        p {
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            padding: 25px;
+            width: 50%;
+            height: 50%;
+            color: white;
+            border-radius: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            background: linear-gradient(to right, lightblue, gray);
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+        }
+        #yearInput::placeholder{
+            color: white;
+            font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+        }
         
-    <!-- Call Of Duty -->
-    { name: 'Call Of Duty', image: 'https://imgbb.host/images/Picsart_24-05-08_17-28-34-590.jpeg', link: '#' }, 
-            
-    <!-- Supersus -->
-    { name: 'Supersus', image: 'https://imgbb.host/images/Picsart_24-05-08_17-32-01-101.jpeg', link: '#' }, 
-          
-    <!-- Sausage Man -->
-    { name: 'Sausage Man', image: 'https://imgbb.host/images/Picsart_24-05-08_17-27-31-945.jpeg', link: '#' }, 
-    ];
-    
+    </style>
+</head>
+<body>
+    <img src="https://picjj.com/images/2024/06/12/WriqRu.png" alt="Background Image" id="background-image">
+    <h1>CHECK TAHUN KABISAT</h1>
+    <input type="number" id="yearInput" placeholder="Masukkan Tahun" min="1" max="9999">
+    <button onclick="checkLeapYear()">Cek</button>
+    <p id="result">Hasil Disini</p>
 
-function searchProducts() {
-  const query = document.querySelector('.input-search').value.toLowerCase();
-  const resultsContainer = document.querySelector('.search-results');
-  resultsContainer.innerHTML = '';
-  
-  if (query) {
-    const filteredProducts = products.filter(product => product.name.toLowerCase().includes(query));
-    if(filteredProducts.length > 0) {
-      filteredProducts.forEach(product => {
-        const productInfo = document.createElement('div');
-        productInfo.classList.add('search-product-info');
-        productInfo.innerHTML = `
-          <img src="${product.image}" alt="${product.name}" class="search-product-image">
-          <span class="search-product-text">${product.name}</span>
-        `;
-        productInfo.addEventListener('click', () => {
-          window.location.href = product.link;
+    <script>
+        document.getElementById('yearInput').addEventListener('input', function() {
+            const yearInput = this.value;
+            this.value = yearInput.replace(/[^0-9]/g, '').slice(0, 4);
         });
-        resultsContainer.appendChild(productInfo);
-      });
-      resultsContainer.classList.add('show');
-    } else {
-      const notFoundContainer = document.createElement('div');
-      notFoundContainer.classList.add('not-found-container');
 
-      const notFoundMessage = document.createElement('div');
-      notFoundMessage.textContent = 'Produk tidak ditemukan';
-      notFoundMessage.classList.add('not-found-message'); // Tambahkan kelas CSS
-      notFoundContainer.appendChild(notFoundMessage);
+        function checkLeapYear() {
+            const year = document.getElementById('yearInput').value;
+            const resultElement = document.getElementById('result');
 
-      // Tambahkan gambar "Produk Tidak Ditemukan"
-      const notFoundImage = document.createElement('img');
-      notFoundImage.src = 'https://imgbb.host/images/022-512.png'; // Ganti dengan URL gambar yang sesuai
-      notFoundImage.alt = 'Produk tidak ditemukan';
-      notFoundImage.classList.add('not-found-image'); // Tambahkan kelas CSS
-      notFoundContainer.appendChild(notFoundImage);
+            if (year === '') {
+                resultElement.textContent = 'Silakan Masukkan Tahun.';
+                return;
+            }
 
-      resultsContainer.appendChild(notFoundContainer);
-      resultsContainer.classList.add('show');
-    }
-  } else {
-    resultsContainer.classList.remove('show');
-  }
-}
-  </script>
-  
-  <!-- Swiper JS -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper-container', {
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  </script>
+            const yearInt = parseInt(year, 10);
+
+            if (yearInt < 1 || yearInt > 9999) {
+                resultElement.textContent = 'Masukkan Tahun Yang Valid Antara 1 Dan 9999.';
+                return;
+            }
+
+            if ((yearInt % 4 === 0 && yearInt % 100 !== 0) || (yearInt % 400 === 0)) {
+                resultElement.textContent = yearInt + ' Adalah Tahun Kabisat.';
+            } else {
+                resultElement.textContent = yearInt + ' Bukan Tahun Kabisat.';
+            }
+        }
+    </script>
 </body>
-
 </html>
